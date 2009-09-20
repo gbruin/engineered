@@ -4,7 +4,7 @@ from django.conf.urls.defaults import *
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns('engineered.comics.views',
     # Example:
     # (r'^engineered/', include('engineered.foo.urls')),
 
@@ -13,6 +13,6 @@ urlpatterns = patterns('',
     # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    (r'^comics/', include('engineered.comics.urls')),
-    (r'^admin/', include(admin.site.urls)),
+    (r'^$', 'index'),
+    (r'^(?P<strip_id>\d+)/$', 'strip'),
 )
