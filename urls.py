@@ -1,4 +1,5 @@
 from django.conf.urls.defaults import *
+from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -16,3 +17,11 @@ urlpatterns = patterns('',
     (r'^comics/', include('engineered.comics.urls')),
     (r'^admin/', include(admin.site.urls)),
 )
+
+# The following is not for deployment
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',
+                {'document_root': '/Users/santa/Documents/proj/engineered/media',
+                'show_indexes': True}),
+    )

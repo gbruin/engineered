@@ -9,4 +9,4 @@ class Strip(models.Model):
     sub_date = models.DateTimeField('submission date')
 
     def __unicode__(self):
-        return self.title
+        return 'Strip #%s' % self.id
