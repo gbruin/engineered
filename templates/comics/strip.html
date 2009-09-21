@@ -27,14 +27,14 @@
 <div class="menu">
   <ul>
     <li><a href="{% url comics.views.strip 1 %}">|&lt;</a></li>
-    <li><a href="{% url comics.views.strip prev.id %}">&lt; Prev</a></li>
+    <li><a href="{{ prev.permalink }}">&lt; Prev</a></li>
     <li><a href="{% url comics.views.random %}">Random</a></li>
-    <li><a href="{% url comics.views.strip next.id %}">Next &gt;</a></li>
+    <li><a href="{{ next.permalink }}">Next &gt;</a></li>
     <li><a href="{% url comics.views.latest %}">&gt;|</a></li>
   </ul>
 </div>
 
-<h3>Permanent link to this comic: http://localhost:8000{% url comics.views.strip strip.id %}</h3>
+<h3>Permanent link to this comic: {{ strip.permalink }}</h3>
 <h3>Image URL: http://localhost:8000/site_media/{{ strip.strip.url }}</h3>
 
 

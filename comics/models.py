@@ -7,8 +7,13 @@ class Strip(models.Model):
     alt_text = models.CharField(max_length=256)
     sub_date = models.DateField('submission date')
     strip    = models.FileField(upload_to='strips')
+
     class Meta:
         get_latest_by = 'sub_date'
+
+    @models.permalink
+    def permalink(self):
+        return ('strip_view', [str(self.id)])
 
     def __unicode__(self):
         return 'Strip #%s' % self.id
