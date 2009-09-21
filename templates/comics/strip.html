@@ -1,5 +1,10 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
 <html>
-<head><title>Engineered - A Webcomic - {{ strip.title }}</title></head>
+<head>
+  <title>Engineered - {{ strip.title }}</title>
+  <link rel="stylesheet" type="text/css" href="/site_media/css/base.css" />
+</head>
 
 
 <body>
@@ -33,6 +38,8 @@
     <li><a href="{% url comics.views.latest %}">&gt;|</a></li>
   </ul>
 </div>
+<br />
+<br />
 
 <h3>Permanent link to this comic: {{ strip.permalink }}</h3>
 <h3>Image URL: http://localhost:8000/site_media/{{ strip.strip.url }}</h3>
