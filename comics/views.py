@@ -3,11 +3,12 @@
 ##from django.http import Http404
 from django.shortcuts import render_to_response, get_object_or_404
 from engineered.comics.models import Strip
+import random
 
 # Each of these view callback can do whatever we want, as long as a
 # HttpResponse is returned or a Http404 is raised.
 
-def index(request):
+def latest(request):
     """Respond to page request for the front page: display the latest
     strip.
     """
@@ -29,6 +30,15 @@ def strip(request, strip_id):
 ##    except Strip.DoesNotExist:
 ##        raise Http404
     strip = get_object_or_404(Strip, pk=strip_id)
+
+    return render_to_response('comics/strip.html',
+            {'strip': strip})
+
+def random(request):
+    """Respond by serving a random strip."""
+    count = Strip.objects.count()
+    which = int(random.random() * count)
+    strip = get_object_or_404(String, pk=which)
 
     return render_to_response('comics/strip.html',
             {'strip': strip})
