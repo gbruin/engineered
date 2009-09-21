@@ -12,7 +12,6 @@ def index(request):
     strip.
     """
     latest_strip = Strip.objects.all().order_by('-sub_date')[:1]
-    # TODO: handle empty db?
 
 ##    template = loader.get_template('comics/index.html')
 ##    context = Context({
@@ -20,8 +19,8 @@ def index(request):
 ##    })
 
 ##    return HttpResponse(template.render(context))
-    return render_to_response('comics/index.html',
-            {'latest_strip': latest_strip})
+    return render_to_response('comics/strip.html',
+            {'strip': latest_strip})
 
 def strip(request, strip_id):
     """Respond to page request for a specific strip."""

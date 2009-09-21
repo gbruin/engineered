@@ -1,1 +1,5 @@
-{{ strip }}
+{% if strip %}
+    <p>{{ strip.title }}</p>
+{% else %}
+    <p>No strip is available.</p>
+{% endif %}
