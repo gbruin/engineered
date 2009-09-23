@@ -1,6 +1,6 @@
 ##from django.template import Context, loader
 ##from django.http import HttpResponse
-##from django.http import Http404
+from django.http import Http404
 from django.shortcuts import render_to_response, get_object_or_404
 from engineered.comics.models import Strip
 import random as rand
@@ -12,7 +12,10 @@ def latest(request):
     """Respond to page request for the front page: display the latest
     strip.
     """
-    latest_strip = Strip.objects.latest()
+    try:
+        latest_strip = Strip.objects.latest()
+    except Strip.DoesNotExist:
+        raise Http404
 
 ##    template = loader.get_template('comics/index.html')
 ##    context = Context({
