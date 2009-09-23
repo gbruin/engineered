@@ -7,4 +7,6 @@ class StripAdmin(admin.ModelAdmin):
     search_fields = ['title']
     date_hierarchy = 'sub_date'
 
+    list_display = ('__unicode__', 'sub_date', 'title')
+
 admin.site.register(Strip, StripAdmin)
