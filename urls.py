@@ -21,7 +21,7 @@ urlpatterns = patterns('',
 # The following is not for deployment
 if settings.DEBUG:
     urlpatterns += patterns('',
-        (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',
+        (r'^static/engineered/(?P<path>.*)$', 'django.views.static.serve',
                 {'document_root': settings.MEDIA_ROOT,
                 'show_indexes': True}),
     )
