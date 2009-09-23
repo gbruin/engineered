@@ -1,3 +1,5 @@
+import os.path
+
 from django.conf.urls.defaults import *
 from django.conf import settings
 
@@ -23,5 +25,8 @@ if settings.DEBUG:
     urlpatterns += patterns('',
         (r'^static/engineered/(?P<path>.*)$', 'django.views.static.serve',
                 {'document_root': settings.MEDIA_ROOT,
+                'show_indexes': True}),
+        (r'^comics/strips/(?P<path>.*)$', 'django.views.static.serve',
+                {'document_root': os.path.join(settings.MEDIA_ROOT, 'strips'),
                 'show_indexes': True}),
     )
