@@ -1,15 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+{% extends "comics/base.html" %}
 
-<html>
-<head>
-  <title>Engineered - {{ strip.title }}</title>
-  <link rel="stylesheet" type="text/css" href="/static/engineered/css/base.css" />
-</head>
+{% block title %}Engineered - {{ strip.title}}{% endblock %}
 
-
-<body>
-
-
+{% block content %}
 <h1>{{ strip.title }}</h1>
 <br />
 <br />
@@ -46,14 +39,4 @@
 <br />
 <br />
 
-<hr />
-<address>
-&copy;2009 <a href="mailto:robinarmstrong@ucla.edu">Robin Armstrong</a>. Webmaster: <a href="mailto:santoso.wijaya@engineering.ucla.edu">Santoso Wijaya</a>.
-</address>
-<p>
-<a href="http://djangopony.com/" class="ponybadge" title="Magic! Ponies! Django! Whee!"><img src="http://media.djangopony.com/img/small/badge.png" width="210" height="65" alt="pony powered"></a>
-</p>
-
-
-</body>
-</html>
+{% endblock %}
