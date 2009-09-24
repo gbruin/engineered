@@ -2,6 +2,7 @@
 ##from django.http import HttpResponse
 from django.http import Http404
 from django.shortcuts import render_to_response, get_object_or_404
+from django.contrib.sites.models import Site
 from engineered.comics.models import Strip
 import random as rand
 
@@ -67,5 +68,8 @@ def _build_context(strip):
     except Strip.DoesNotExist:
         next = strip
     context['next'] = next
+
+    context['permalink'] = 'http://%s%s' \
+            % (Site.objects.get_current(), strip.permalink())
 
     return context

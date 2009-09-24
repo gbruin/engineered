@@ -19,7 +19,7 @@ TKPATH = "santa@takeda.tk:~/proj/engineered"
 #TAKEDAEXCL = "peachy/*"
 
 # Flags
-RSYNCFLAGS = --recursive --links --perms --owner --times \
+RSYNCFLAGS = --recursive --links --perms --times \
              --compress --exclude-from=$(EXCLF) \
              --exclude="*.log"--log-file=$(LOGF)
 RSYNCVERB = --verbose --human-readable --progress
@@ -41,6 +41,7 @@ chperm:
 	                          -not -regex ".*/\.git.*" -print | \
 			   	              xargs $(CHMOD) u=rw,og=r
 	@$(CHMOD) u+x $(WPATH)/manage.py
+	@$(CHMOD) uo+w $(WPATH)
 	@$(CHMOD) u=rwx,og-rwx $(UTILD)
 	@$(CHMOD) u-x,og-rwx $(UTILD)/*
 
