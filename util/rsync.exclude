@@ -1,0 +1,6 @@
+.DS_Store
+.git
+.gitignore
+*.pyc
+comics/media/strips/*
+eng.db
