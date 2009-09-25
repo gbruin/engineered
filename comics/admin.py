@@ -8,5 +8,6 @@ class StripAdmin(admin.ModelAdmin):
     date_hierarchy = 'sub_date'
 
     list_display = ('__unicode__', 'sub_date', 'title')
+    ordering = ('-id', '-sub_date')
 
 admin.site.register(Strip, StripAdmin)
