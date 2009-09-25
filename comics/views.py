@@ -14,7 +14,7 @@ def latest(request):
     strip.
     """
     try:
-        latest_strip = Strip.objects.latest()
+        latest_strip = Strip.objects.order_by('pk').reverse()[0]
     except Strip.DoesNotExist:
         raise Http404
 
