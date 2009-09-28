@@ -47,7 +47,9 @@ def random(request):
 
 def archive(request):
     """Serve a list of strip titles and links in the database."""
-    raise Http404('Not yet implemented.')
+    strips = Strip.objects.order_by('id').reverse()
+
+    return render_to_response('comics/archive.html', {'strips': strips})
 
 
 # *** UTILITY FUNCTIONS ***

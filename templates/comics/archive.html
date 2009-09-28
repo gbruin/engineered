@@ -1,0 +1,19 @@
+{% extends "comics/base.html" %}
+
+{% block title %}Engineered - Archive{% endblock %}
+
+{% block content %}
+
+<h1>Archive</h1>
+<br />
+<br />
+
+<p>
+{% for strip in strips %}
+<a href="{% url comics.views.strip strip.id %}">{{ strip.title }}</a>
+<br />
+{% endfor %}
+</p>
+<br />
+
+{% endblock %}
