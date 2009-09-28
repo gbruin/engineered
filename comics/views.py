@@ -16,7 +16,7 @@ def latest(request):
     try:
         latest_strip = Strip.objects.order_by('pk').reverse()[0]
     except Strip.DoesNotExist:
-        raise Http404
+        raise Http404('No comic strip in the database.')
 
 ##    template = loader.get_template('comics/index.html')
 ##    context = Context({
@@ -44,6 +44,10 @@ def random(request):
     strip = get_object_or_404(Strip, pk=which)
 
     return render_to_response('comics/strip.html', _build_context(strip))
+
+def archive(request):
+    """Serve a list of strip titles and links in the database."""
+    raise Http404('Not yet implemented.')
 
 
 # *** UTILITY FUNCTIONS ***
