@@ -59,9 +59,14 @@ sync-drobo-dry: chperm
 sync-takeda: chperm
 	@echo "Syncing to takeda ..."
 	@$(RSYNC) --update $(RSYNCFLAGS) $(WPATH)/ $(TKPATH)
+	@$(RSYNC) --update $(RSYNCFLAGS) $(WPATH)/comics/media/css/ \
+			santa@takeda.tk:~/public_html/static/engineered/css
 	@echo "Done."
 
 sync-takeda-dry: chperm
 	@echo "Syncing to takeda ... (dry run)"
 	@$(RSYNC) --update --dry-run \
 			  $(RSYNCVERB) $(RSYNCFLAGS) $(WPATH)/ $(TKPATH)
+	@$(RSYNC) --update --dry-run \
+			$(RSYNCFLAGS) $(WPATH)/comics/media/css/ \
+			santa@takeda.tk:~/public_html/static/engineered/css
