@@ -86,29 +86,32 @@ h5 {
     letter-spacing: 1px;
 }
 
-#menu ul {
+ul.menu, 
+.menu > ul {
     margin: auto;
     padding: 0;
     list-style-type: none;
     width: 500px;
 }
 
-#menu li {
+ul.menu li,
+.menu > ul li {
     float: left;
-}
-
-#menu ul li a {
     display: block;
     margin: 0px 4px 0px 4px;
     width: 70px;
     border: 1px solid black;
+    font-size: 11px;
+    line-height: 14px;
+    text-decoration: none;
+}
+
+ul.menu li a,
+.menu > ul li a {
     /*
     background-color: #6E7B91;  
     color: #FFF;
     */
-    font-size: 11px;
-    line-height: 14px;
-    text-decoration: none;
 }
 
 /*

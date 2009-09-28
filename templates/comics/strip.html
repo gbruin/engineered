@@ -7,7 +7,7 @@
 <br />
 <br />
 
-<div id="menu">
+<div class="menu">
   <ul>
     <li><a href="{% url comics.views.strip 1 %}">|&lt;</a></li>
     <li><a href="{% url comics.views.strip prev.id %}">&lt; Prev</a></li>
@@ -23,7 +23,7 @@
 <img class="strip" src="{{ strip.strip.url }}" title="{{ strip.alt_text }}" alt="{{ strip.title }}" />
 <br />
 
-<div id="menu">
+<div class="menu">
   <ul>
     <li><a href="{% url comics.views.strip 1 %}">|&lt;</a></li>
     <li><a href="{{ prev.permalink }}">&lt; Prev</a></li>
