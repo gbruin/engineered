@@ -9,10 +9,13 @@
 <br />
 
 <p>
-{% for strip in strips %}
-<a href="{% url comics.views.strip strip.id %}">{{ strip.title }}</a>
-<br />
-{% endfor %}
+<div class="archive">
+    <ul>
+        {% for strip in strips %}
+        <li><a href="{% url comics.views.strip strip.id %}">{{ strip.title }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
 </p>
 <br />
 
