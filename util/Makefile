@@ -41,6 +41,7 @@ chperm:
 	                          -not -regex ".*/\.git.*" -print | \
 			   	              xargs $(CHMOD) u=rw,og=r
 	@$(CHMOD) u+x $(WPATH)/manage.py
+	@$(CHMOD) uo+w $(WPATH)
 	@$(CHMOD) uo+w $(WPATH)/comics/media/strips
 	@$(CHMOD) u=rwx,og-rwx $(UTILD)
 	@$(CHMOD) u-x,og-rwx $(UTILD)/*
