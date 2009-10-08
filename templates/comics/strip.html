@@ -1,18 +1,17 @@
 {% extends "comics/base.html" %}
 
-{% block title %}Engineered - {{ strip.title}}{% endblock %}
+{% block title %}Engineered - {{ strip.title }}{% endblock %}
 
 {% block content %}
 <h1>{{ strip.title }}</h1>
 <br />
 <br />
 
-<div class="menu">
+<div class="nav">
   <ul>
     <li><a href="{% url comics.views.strip 1 %}">|&lt;</a></li>
     <li><a href="{% url comics.views.strip prev.id %}">&lt; Prev</a></li>
     <li><a href="{% url comics.views.random %}">Random</a></li>
-    <li><a href="{% url comics.views.archive %}">Archive</a></li>
     <li><a href="{% url comics.views.strip next.id %}">Next &gt;</a></li>
     <li><a href="{% url comics.views.latest %}">&gt;|</a></li>
   </ul>
@@ -23,12 +22,11 @@
 <img class="strip" src="{{ strip.strip.url }}" title="{{ strip.alt_text }}" alt="{{ strip.title }}" />
 <br />
 
-<div class="menu">
+<div class="nav">
   <ul>
     <li><a href="{% url comics.views.strip 1 %}">|&lt;</a></li>
     <li><a href="{{ prev.permalink }}">&lt; Prev</a></li>
     <li><a href="{% url comics.views.random %}">Random</a></li>
-    <li><a href="{% url comics.views.archive %}">Archive</a></li>
     <li><a href="{{ next.permalink }}">Next &gt;</a></li>
     <li><a href="{% url comics.views.latest %}">&gt;|</a></li>
   </ul>

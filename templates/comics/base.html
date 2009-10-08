@@ -13,6 +13,15 @@
 
 {% block content %}{% endblock %}
 
+<div class="menu">
+  <ul>
+    <li class="first"><a href="{% url comics.views.latest %}">Home</a></li>
+    <li><a href="{% url comics.views.archive %}">Archive</a></li>
+    <li><a href="{% url comics.views.contact %}">Contact</a></li>
+    <li><a href="http://www.facebook.com/pages/Engineered-Comic/166199156239">Facebook</a></li>
+  </ul>
+</div>
+
 <div class="signature">
 <hr />
 <address>

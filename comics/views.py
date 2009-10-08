@@ -51,6 +51,11 @@ def archive(request):
 
     return render_to_response('comics/archive.html', {'strips': strips})
 
+def contact(request):
+    """A view that list contact information."""
+##    raise Http404('Under construction')
+    return render_to_response('comics/contact.html', {})
+
 
 # *** UTILITY FUNCTIONS ***
 
