@@ -11,6 +11,9 @@ class Strip(models.Model):
     class Meta:
         get_latest_by = 'sub_date'
 
+    def get_absolute_url(self):
+        return self.permalink()
+
     @models.permalink
     def permalink(self):
         return ('strip_view', [str(self.id)])
