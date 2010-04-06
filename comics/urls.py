@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import *
-from comics.feeds import LatestEntries
+from feeds import LatestEntries
 import views
 
 feeds = {

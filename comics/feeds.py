@@ -1,5 +1,5 @@
 from django.contrib.syndication.feeds import Feed
-from comics.models import Strip
+from models import Strip
 
 class LatestEntries(Feed):
     title = 'Engineered Comic'
