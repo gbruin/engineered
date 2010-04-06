@@ -1,7 +1,7 @@
 # Django settings for engineered project.
 import os.path
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -44,7 +44,7 @@ MEDIA_ROOT = '/home/.moonbean/santa4nt/media.trianglebruins.com/'
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = 'http://media.trianglebruins.com/'
+MEDIA_URL = 'http://media.trianglebruins.com'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
