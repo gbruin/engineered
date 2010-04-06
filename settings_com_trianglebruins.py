@@ -44,12 +44,12 @@ MEDIA_ROOT = '/home/.moonbean/santa4nt/engineered.trianglebruins.com/public/medi
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = 'http://engineered.trianglebruins.com/public/media/'
+MEDIA_URL = 'http://engineered.trianglebruins.com/media/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/public/media/'
+ADMIN_MEDIA_PREFIX = '/media/'
 
 # Make this unique, and don't share it with anybody.
 #SECRET_KEY = 'lq+(3pkhkl*_fbz@!25)7f81hhl%5j_4z-7)6!x)dygp(%h^u&'

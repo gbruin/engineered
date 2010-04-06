@@ -24,7 +24,7 @@ urlpatterns = patterns('',
 # The following is not for deployment
 if settings.DEBUG:
     urlpatterns += patterns('',
-        (r'^static/engineered/(?P<path>.*)$', 'django.views.static.serve',
+        (r'^media/(?P<path>.*)$', 'django.views.static.serve',
                 {'document_root': settings.MEDIA_ROOT,
                 'show_indexes': True}),
 ##        (r'^comics/strips/(?P<path>.*)$', 'django.views.static.serve',
