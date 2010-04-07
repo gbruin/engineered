@@ -1,5 +1,6 @@
 *.pyc
 *.swp
+*.bak
 .DS_Store
 eng.db
 /comics/media/strips
