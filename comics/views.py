@@ -1,5 +1,3 @@
-##from django.template import Context, loader
-##from django.http import HttpResponse
 from django.http import Http404
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
@@ -15,7 +13,7 @@ def latest(request):
     """
     try:
         latest_strip = Strip.objects.order_by('pk').reverse()[0]
-    except Strip.DoesNotExist:
+    except IndexError:
         raise Http404('No comic strip in the database.')
 
     return render_to_response('comics/strip.html', 
