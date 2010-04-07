@@ -3,8 +3,8 @@ from models import Strip
 
 class LatestEntries(Feed):
     title = 'Engineered Comic'
-    link = '/engineered'
-    description = 'Latest comic strips from engineeredcomic.com'
+    link = '/'
+    description = 'Latest comic strips from engineeredcomic.'
 
     def items(self):
         return Strip.objects.order_by('-sub_date')

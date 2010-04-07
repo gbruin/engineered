@@ -23,11 +23,11 @@
 
 <div class="social">
   <ul>
-    <li><a href="http://reddit.com/submit?url={{ permalink }}&title={{ strip.title }}"><img src="/static/engineered/images/reddit-32x32.png" /></a></li>
-    <li><a href="http://digg.com/submit?phase=2&url={{ permalink }}&title={{ strip.title }}"><img src="/static/engineered/images/digg-32x32.png" /></a></li>
-    <li><a href="http://del.icio.us/post?url={{ permalink }}&title={{ strip.title }}"><img src="/static/engineered/images/delicious-32x32.png" /></a></li>
-    <li><a href="http://www.stumbleupon.com/submit?url={{ permalink }}&title={{ strip.title }}"><img src="/static/engineered/images/stumbleupon-32x32.png" /></a></li>
-    <li><a href="http://www.facebook.com/sharer.php?u={{ permalink }}&t={{ strip.title }}"><img src="/static/engineered/images/facebook-32x32.png" /></a></li>
+    <li><a href="http://reddit.com/submit?url={{ permalink }}&title={{ strip.title }}"><img src="{{ MEDIA_URL }}/images/reddit-32x32.png" /></a></li>
+    <li><a href="http://digg.com/submit?phase=2&url={{ permalink }}&title={{ strip.title }}"><img src="{{ MEDIA_URL }}/images/digg-32x32.png" /></a></li>
+    <li><a href="http://del.icio.us/post?url={{ permalink }}&title={{ strip.title }}"><img src="{{ MEDIA_URL }}/images/delicious-32x32.png" /></a></li>
+    <li><a href="http://www.stumbleupon.com/submit?url={{ permalink }}&title={{ strip.title }}"><img src="{{ MEDIA_URL }}/images/stumbleupon-32x32.png" /></a></li>
+    <li><a href="http://www.facebook.com/sharer.php?u={{ permalink }}&t={{ strip.title }}"><img src="{{ MEDIA_URL }}/images/facebook-32x32.png" /></a></li>
   </ul>
 </div>
 
@@ -48,9 +48,9 @@
 <br />
 <br />
 
-<h3>Permanent link to this comic: {{ permalink }}</h3>
+<h3>Permanent link to this comic: http://{{ request.META.HTTP_HOST }}{{ request.path }}</h3>
 <h3>Image URL: {{ strip.strip.url }}</h3>
 
 <br />
-<p> <a href="{{ site.domain }}/engineered/feeds/latest">RSS feeds</a></p>
+<p> <a href="http://{{ request.META.HTTP_HOST }}/feeds/latest">RSS feeds</a></p>
 {% endblock %}
