@@ -18,7 +18,8 @@ def latest(request):
 
     return render_to_response('comics/strip.html', 
             _build_context(latest_strip),
-            context_instance=RequestContext(request))
+            context_instance=RequestContext(request,
+            {'permalink': 'http://%s%s' % (request.META['HTTP_HOST'], request.path)}))
 
 def strip(request, strip_id):
     """Respond to page request for a specific strip."""
@@ -26,17 +27,15 @@ def strip(request, strip_id):
 
     return render_to_response('comics/strip.html',
             _build_context(strip),
-            context_instance=RequestContext(request))
+            context_instance=RequestContext(request,
+            {'permalink': 'http://%s%s' % (request.META['HTTP_HOST'], request.path)}))
 
 def random(request):
     """Respond by serving a random strip."""
     count = Strip.objects.count()
     which = int(rand.random() * count) + 1
-    strip = get_object_or_404(Strip, pk=which)
 
-    return render_to_response('comics/strip.html',
-            _build_context(strip),
-            context_instance=RequestContext(request))
+    return strip(request, which)
 
 def archive(request):
     """Serve a list of strip titles and links in the database."""
@@ -48,7 +47,6 @@ def archive(request):
 
 def contact(request):
     """A view that list contact information."""
-##    raise Http404('Under construction'
     return render_to_response('comics/contact.html', {},
             context_instance=RequestContext(request))
 
