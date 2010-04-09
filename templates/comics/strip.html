@@ -52,5 +52,5 @@
 <h3>Image URL: {{ strip.strip.url }}</h3>
 
 <br />
-<p> <a href="http://{{ request.META.HTTP_HOST }}/feeds/latest">RSS feeds</a></p>
+<p> <a href="{% url feeds_view url="latest" %}">RSS feeds</a></p>
 {% endblock %}
