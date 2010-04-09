@@ -13,6 +13,6 @@ urlpatterns = patterns('',
     url(r'^archive/$', views.archive, name='archive_view'),
     url(r'^(?P<strip_id>\d+)/$', views.strip, name='strip_view'),
     # enable feeds (RSS)
-    (r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.feed',
-        {'feed_dict': feeds}),
+    url(r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.feed',
+        {'feed_dict': feeds}, name='feeds_view'),
 )
