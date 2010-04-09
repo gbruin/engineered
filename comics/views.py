@@ -19,7 +19,7 @@ def latest(request):
     return render_to_response('comics/strip.html', 
             _build_context(latest_strip),
             context_instance=RequestContext(request,
-            {'permalink': 'http://%s%s' % (request.META['HTTP_HOST'], request.path)}))
+            {'permalink': request.build_absolute_uri(latest_strip.get_absolute_url())}))
 
 def strip(request, strip_id):
     """Respond to page request for a specific strip."""
@@ -28,7 +28,7 @@ def strip(request, strip_id):
     return render_to_response('comics/strip.html',
             _build_context(strip),
             context_instance=RequestContext(request,
-            {'permalink': 'http://%s%s' % (request.META['HTTP_HOST'], request.path)}))
+            {'permalink': request.build_absolute_uri(strip.get_absolute_url())}))
 
 def random(request):
     """Respond by serving a random strip."""
